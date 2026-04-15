@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "app/api/donate/webhook/route": {
+      "maxDuration": 30
+    }
+  }
+}

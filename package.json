@@ -1,0 +1,52 @@
+{
+  "name": "oathmesh-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@react-email/components": "^0.0.32",
+    "@upstash/redis": "^1.37.0",
+    "@vercel/kv": "^3.0.0",
+    "@vercel/postgres": "^0.10.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.38.4",
+    "framer-motion": "^11.18.1",
+    "lru-cache": "^11.0.2",
+    "lucide-react": "^0.473.0",
+    "next": "15.1.5",
+    "prettier": "^3.8.2",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "resend": "^4.1.1",
+    "stripe": "^17.5.0",
+    "tailwind-merge": "^2.6.0",
+    "ws": "^8.20.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.30.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.5",
+    "shiki": "^2.0.3",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^3.0.4"
+  }
+}

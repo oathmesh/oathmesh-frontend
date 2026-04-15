@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.env.local
+.env*.local
+dist/
+.vercel/
+*.log
+.DS_Store
+Thumbs.db
+db/migrations/*.sql

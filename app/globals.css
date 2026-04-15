@@ -1,0 +1,226 @@
+/* @file app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import 'tailwindcss';
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-jetbrains: 'JetBrains Mono', monospace;
+    color-scheme: dark;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: var(--font-inter);
+    line-height: 1.6;
+  }
+
+  /* Focus rings — all interactive elements */
+  *:focus-visible {
+    outline: 2px solid #0066ff;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Remove default focus ring while keeping focus-visible */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111111;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(0, 102, 255, 0.3);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Dot grid background for hero */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Flat surface card — dark, no blur, crisp border */
+  .card-surface {
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+  }
+
+  .card-surface-hover {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .card-surface-hover:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
+  }
+
+  /* Code block */
+  .code-block {
+    background-color: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    font-family: var(--font-jetbrains);
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  /* Pill badge */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* Prose styles for docs */
+  .prose-oathmesh {
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 72ch;
+  }
+
+  .prose-oathmesh h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-oathmesh h2 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .prose-oathmesh h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-oathmesh p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+
+  .prose-oathmesh a {
+    color: #3385ff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose-oathmesh a:hover {
+    color: #0066ff;
+  }
+
+  .prose-oathmesh ul,
+  .prose-oathmesh ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose-oathmesh li {
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-oathmesh code {
+    font-family: var(--font-jetbrains);
+    font-size: 0.82em;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    color: #a5d6ff;
+  }
+
+  .prose-oathmesh table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .prose-oathmesh th {
+    text-align: left;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .prose-oathmesh td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .text-subtle {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .divide-surface > * + * {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Reduce motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
