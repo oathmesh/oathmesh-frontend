@@ -1,6 +1,6 @@
 // @file tests/unit/utils.test.ts
-import { describe, it, expect } from 'vitest';
-import { cn, formatDate, truncate, formatCurrency, slugify } from '../../lib/utils';
+import { describe, expect, it } from 'vitest';
+import { cn, formatCurrency, formatDate, slugify, truncate } from '../../src/lib/utils';
 
 describe('cn', () => {
   it('merges class names', () => {

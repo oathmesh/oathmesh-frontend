@@ -2,12 +2,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   images: {
-    remotePatterns: [
-      { hostname: 'avatars.githubusercontent.com' },
-    ],
+    remotePatterns: [{ hostname: 'avatars.githubusercontent.com' }],
   },
   async headers() {
     return [

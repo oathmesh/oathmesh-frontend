@@ -1,5 +1,5 @@
 // @file tests/unit/rate-limit.test.ts
-import { describe, it, expect, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 // Test the in-memory fallback implementation directly
 // We import the internals by mocking the environment

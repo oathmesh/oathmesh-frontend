@@ -1,5 +1,5 @@
 // @file tests/e2e/donate.spec.ts
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test.describe('Donate', () => {
   test.beforeEach(async ({ page }) => {

@@ -1,5 +1,5 @@
 // @file tests/e2e/wishlist.spec.ts
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test.describe('Wishlist', () => {
   test.beforeEach(async ({ page }) => {
@@ -34,7 +34,10 @@ test.describe('Wishlist', () => {
     await page.click('#submit-wish-open');
 
     await page.fill('[name="title"]', 'Test Feature from Playwright');
-    await page.fill('[name="description"]', 'This is a test feature request from Playwright e2e tests.');
+    await page.fill(
+      '[name="description"]',
+      'This is a test feature request from Playwright e2e tests.',
+    );
     await page.selectOption('[name="category"]', 'feature');
 
     await page.click('#submit-wish-btn');
@@ -50,13 +53,13 @@ test.describe('Wishlist', () => {
     // Get the first vote button
     const voteBtn = page.locator('button[aria-label*="vote"]').first();
     const initialText = await voteBtn.innerText();
-    const initialCount = parseInt(initialText.replace(/\D/g, ''));
+    const initialCount = Number.parseInt(initialText.replace(/\D/g, ''));
 
     await voteBtn.click();
     await page.waitForTimeout(1000);
 
     const updatedText = await voteBtn.innerText();
-    const updatedCount = parseInt(updatedText.replace(/\D/g, ''));
+    const updatedCount = Number.parseInt(updatedText.replace(/\D/g, ''));
 
     // Count should have increased or button shows already-voted state
     expect(updatedCount).toBeGreaterThanOrEqual(initialCount);

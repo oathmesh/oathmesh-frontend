@@ -1,5 +1,5 @@
 // @file tests/unit/env.test.ts
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // We test the validation logic directly without importing env.ts (which would
 // execute at import time). Instead, we replicate the schema and test it.
